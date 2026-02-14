@@ -1,1 +1,207 @@
-/* Cleared for Tailwind */
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+.letter-image {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    margin: 0 auto;
+    z-index: 20;
+}
+
+.animated-mail {
+    position: absolute;
+    height: 112px;
+    width: 150px;
+    transition: 0.4s;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.animated-mail .body {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 75px 150px;
+    border-color: transparent transparent #ff4d6d transparent;
+    z-index: 2;
+}
+
+.animated-mail .top-fold {
+    position: absolute;
+    top: 37px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 37px 75px 0 75px;
+    transform-origin: 50% 0%;
+    transition: transform 0.4s 0.4s, z-index 0.2s 0.4s;
+    border-color: #ff3355 transparent transparent transparent;
+    z-index: 2;
+}
+
+.animated-mail .back-fold {
+    position: absolute;
+    bottom: 0;
+    width: 150px;
+    height: 75px;
+    background: #ff3355;
+    z-index: 0;
+}
+
+.animated-mail .left-fold {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 37px 0 37px 75px;
+    border-color: transparent transparent transparent #ff4060;
+    z-index: 2;
+}
+
+.animated-mail .letter {
+    left: 15px;
+    bottom: 0px;
+    position: absolute;
+    width: 120px;
+    height: 45px;
+    background: white;
+    z-index: 1;
+    overflow: hidden;
+    transition: 0.4s 0.2s;
+}
+
+.animated-mail .letter .letter-border {
+    height: 8px;
+    width: 100%;
+    background: repeating-linear-gradient(-45deg,
+            #ff4d6d,
+            #ff4d6d 6px,
+            transparent 6px,
+            transparent 14px);
+}
+
+.animated-mail .letter .letter-title {
+    margin-top: 8px;
+    margin-left: 5px;
+    height: 8px;
+    width: 40%;
+    background: #ff4d6d;
+}
+
+.animated-mail .letter .letter-context {
+    margin-top: 8px;
+    margin-left: 5px;
+    height: 8px;
+    width: 20%;
+    background: #ff4d6d;
+}
+
+.animated-mail .letter .letter-stamp {
+    margin-top: 22px;
+    margin-left: 90px;
+    border-radius: 100%;
+    height: 22px;
+    width: 22px;
+    background: #ff4d6d;
+    opacity: 0.3;
+}
+
+.letter-image .shadow {
+    position: absolute;
+    top: 130px;
+    left: 50%;
+    width: 200px;
+    height: 20px;
+    transition: 0.4s;
+    transform: translateX(-50%);
+    border-radius: 100%;
+    background: radial-gradient(rgba(0, 0, 0, 0.15),
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0));
+}
+
+.letter-image:hover .animated-mail {
+    transform: translate(-50%, -20px);
+}
+
+.letter-image:hover .animated-mail .top-fold {
+    transition: transform 0.4s, z-index 0.2s;
+    transform: rotateX(180deg);
+    z-index: 0;
+}
+
+.letter-image:hover .animated-mail .letter {
+    height: 100px;
+}
+
+.letter-image:hover .shadow {
+    width: 120px;
+}
+
+.letter-label {
+    margin-top: 10px;
+    color: #ff4d6d;
+    font-weight: 900;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    text-align: center;
+}
+
+.romantic-font {
+    font-family: 'Itim', cursive;
+}
+
+@media (max-width: 768px) {
+    .letter-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .animated-mail {
+        height: 90px;
+        width: 120px;
+    }
+
+    .animated-mail .body {
+        border-width: 0 0 60px 120px;
+    }
+
+    .animated-mail .top-fold {
+        top: 30px;
+        border-width: 30px 60px 0 60px;
+    }
+
+    .animated-mail .back-fold {
+        width: 120px;
+        height: 60px;
+    }
+
+    .animated-mail .left-fold {
+        border-width: 30px 0 30px 60px;
+    }
+
+    .animated-mail .letter {
+        left: 10px;
+        width: 100px;
+        height: 35px;
+    }
+
+    .letter-image .shadow {
+        top: 100px;
+        width: 150px;
+    }
+
+    .letter-image:hover .animated-mail .letter {
+        height: 80px;
+    }
+
+    .letter-label {
+        font-size: 0.6rem;
+    }
+}
